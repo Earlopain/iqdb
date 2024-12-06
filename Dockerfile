@@ -1,4 +1,4 @@
-FROM alpine:3.20 as builder
+FROM alpine:3.20 AS builder
 
 RUN apk --no-cache add sqlite-dev cmake git build-base
 
