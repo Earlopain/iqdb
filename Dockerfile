@@ -8,7 +8,7 @@ RUN make release
 
 FROM alpine:3.21
 
-RUN apk --no-cache add sqlite-libs binutils
+RUN apk --no-cache add sqlite-libs libstdc++
 
 COPY --from=builder /iqdb/build/release/src/iqdb /usr/local/bin/
 
