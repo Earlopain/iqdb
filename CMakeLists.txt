@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.20)
 
 project(iqdb)
 
-# Require C++17
+# Require C++23
 # https://cmake.org/cmake/help/latest/prop_tgt/CXX_STANDARD.html
 # https://cmake.org/cmake/help/latest/prop_tgt/CXX_STANDARD_REQUIRED.html
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Disable GNU-specific C++-17 features.
+# Disable GNU-specific C++-23 features.
 # https://cmake.org/cmake/help/latest/prop_tgt/CXX_EXTENSIONS.html#prop_tgt:CXX_EXTENSIONS
 # https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Extensions.html
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -45,12 +45,6 @@ FetchContent_Declare(
 )
 
 FetchContent_Declare(
-  fmt
-  GIT_REPOSITORY https://github.com/fmtlib/fmt
-  GIT_TAG        11.0.2
-)
-
-FetchContent_Declare(
   sqliteOrm
   GIT_REPOSITORY https://github.com/fnc12/sqlite_orm
   GIT_TAG        v1.9
@@ -59,7 +53,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(httplib)
 FetchContent_MakeAvailable(json)
 FetchContent_MakeAvailable(Catch2)
-FetchContent_MakeAvailable(fmt)
 FetchContent_MakeAvailable(sqliteOrm)
 
 find_package(SQLite3 REQUIRED)

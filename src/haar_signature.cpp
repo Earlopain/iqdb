@@ -1,6 +1,6 @@
+#include <format>
 #include <vector>
 
-#include <fmt/format.h>
 #include <iqdb/haar_signature.h>
 #include <iqdb/haar.h>
 #include <iqdb/imgdb.h>
@@ -59,13 +59,13 @@ std::string HaarSignature::to_string() const {
   std::string str = "";
   str.reserve(sizeof(HaarSignature)*2);
 
-  str += fmt::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[0]));
-  str += fmt::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[1]));
-  str += fmt::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[2]));
+  str += std::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[0]));
+  str += std::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[1]));
+  str += std::format("{:016x}", reinterpret_cast<const uint64_t&>(avglf[2]));
 
   for (size_t c = 0; c < 3; c++) {
     for (size_t i = 0; i < NUM_COEFS; i++) {
-      str += fmt::format("{:04x}", reinterpret_cast<const uint16_t&>(sig[c][i]));
+      str += std::format("{:04x}", reinterpret_cast<const uint16_t&>(sig[c][i]));
     }
   }
 

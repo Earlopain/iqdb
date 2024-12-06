@@ -6,7 +6,6 @@ target_link_libraries(
   Threads::Threads
   nlohmann_json::nlohmann_json
   httplib::httplib
-  fmt::fmt
   sqlite_orm::sqlite_orm
   ${CMAKE_DL_LIBS} # libdl (for dlsym)
 )
