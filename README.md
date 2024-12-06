@@ -1,10 +1,10 @@
-s# IQDB: Image Query Database System
+# IQDB: Image Query Database System
 
 IQDB is a reverse image search system. It lets you search a database of images
 to find images that are visually similar to a given image.
 
 This version of IQDB is a fork of the original IQDB used by https://iqdb.org.
-This version powers the reverse image search for [E621](https://github.com/e621ng/e621ng).
+This version powers the reverse image search for [FoxTrove](https://github.com/earlopain/FoxTrove).
 
 # Quickstart
 
@@ -31,8 +31,7 @@ stored on disk in an SQLite database.
 #### Adding images
 
 To add an image to the database, POST a file to `/images/:id` where `:id` is an
-ID number for the image. On e621, the IDs used are post IDs, but they can
-be any number to identify the image.
+ID number for the image. It is up to you to map them to something useful in your application.
 
 ```bash
 curl -F file=@test.jpg http://localhost:5588/images/1234
