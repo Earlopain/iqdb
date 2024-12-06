@@ -44,10 +44,10 @@ namespace iqdb {
 static Server server;
 
 static void signal_handler(int signal, siginfo_t* info, void* ucontext) {
-  INFO("Received signal {} ({})\n", signal, strsignal(signal));
+  INFO("Received signal {} ({})", signal, strsignal(signal));
 
   if (signal == SIGSEGV) {
-    INFO("Address: {}\n", info->si_addr);
+    INFO("Address: {}", info->si_addr);
     exit(1);
   }
 
@@ -89,7 +89,7 @@ void validate_json_is_valid(nlohmann::json json) {
 }
 
 void http_server(const std::string host, const int port, const std::string database_filename) {
-  INFO("Starting server...\n");
+  INFO("Starting server...");
 
   std::shared_mutex mutex_;
   auto memory_db = std::make_unique<IQDB>(database_filename);
@@ -194,7 +194,7 @@ void http_server(const std::string host, const int port, const std::string datab
   });
 
   server.set_logger([](const auto &req, const auto &res) {
-    INFO("{} \"{} {} {}\" {} {}\n", req.remote_addr, req.method, req.path, req.version, res.status, res.body.size());
+    INFO("{} \"{} {} {}\" {} {}", req.remote_addr, req.method, req.path, req.version, res.status, res.body.size());
   });
 
   server.set_exception_handler([](const auto& req, auto& res, std::exception_ptr ep) {
@@ -208,22 +208,22 @@ void http_server(const std::string host, const int port, const std::string datab
         { "message", message }
       };
 
-      ERROR("Exception: {}\n", message);
+      ERROR("Exception: {}", message);
 
     } catch (...) {
       data = {
         { "message", "Unknown exception" }
       };
-      ERROR("Exception: {}\n", "Unknown exception");
+      ERROR("Exception: {}", "Unknown exception");
     }
 
     res.set_content(data.dump(4), "application/json");
     res.status = 500;
   });
 
-  INFO("Listening on {}:{}.\n", host, port);
+  INFO("Listening on {}:{}.", host, port);
   server.listen(host.c_str(), port);
-  INFO("Stopping server...\n");
+  INFO("Stopping server...");
 }
 
 void help() {

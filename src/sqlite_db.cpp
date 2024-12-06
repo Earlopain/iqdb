@@ -30,7 +30,7 @@ std::optional<Image> SqliteDB::getImage(postId post_id) {
   if (results.size() == 1) {
     return results[0];
   } else {
-    DEBUG("Couldn't find post #{} in sqlite database.\n", post_id);
+    DEBUG("Couldn't find post #{} in sqlite database.", post_id);
     return std::nullopt;
   }
 }

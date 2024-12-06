@@ -68,12 +68,12 @@ void IQDB::addImage(imageId post_id, const HaarSignature& haar) {
   int iqdb_id = sqlite_db_->addImage(post_id, haar);
   addImageInMemory(iqdb_id, post_id, haar);
   img_count++;
-  DEBUG("Added post #{} to memory and database (iqdb={} haar={}).\n", post_id, iqdb_id, haar.to_string());
+  DEBUG("Added post #{} to memory and database (iqdb={} haar={}).", post_id, iqdb_id, haar.to_string());
 }
 
 void IQDB::addImageInMemory(imageId iqdb_id, imageId post_id, const HaarSignature& haar) {
   if ((size_t)iqdb_id >= m_info.size()) {
-    DEBUG("Growing m_info array (size={}).\n", m_info.size());
+    DEBUG("Growing m_info array (size={}).", m_info.size());
     m_info.resize(iqdb_id + 50000);
   }
 
@@ -96,11 +96,11 @@ void IQDB::loadDatabase(std::string filename) {
     img_count++;
 
     if (img_count % 250000 == 0) {
-      INFO("Loaded image {} (post #{})...\n", image.id, image.post_id);
+      INFO("Loaded image {} (post #{})...", image.id, image.post_id);
     }
   });
 
-  INFO("Loaded {} images from {}.\n", getImgCount(), filename);
+  INFO("Loaded {} images from {}.", getImgCount(), filename);
 }
 
 bool IQDB::isDeleted(imageId iqdb_id) {
@@ -122,7 +122,7 @@ sim_vector IQDB::queryFromSignature(const HaarSignature &signature, size_t numre
   std::priority_queue<sim_value> pqResults; /* results priority queue; largest at top */
   sim_vector V; /* output results */
 
-  DEBUG("Querying signature={}\n", signature.to_string());
+  DEBUG("Querying signature={}", signature.to_string());
 
   // Luminance score (DC coefficient).
   for (size_t i = 0; i < scores.size(); i++) {
@@ -187,7 +187,7 @@ sim_vector IQDB::queryFromSignature(const HaarSignature &signature, size_t numre
 void IQDB::removeImage(imageId post_id) {
   auto image = sqlite_db_->getImage(post_id);
   if (image == std::nullopt) {
-    WARN("Couldn't remove post #{}; post not in sqlite database.\n", post_id);
+    WARN("Couldn't remove post #{}; post not in sqlite database.", post_id);
     return;
   }
 
@@ -195,7 +195,7 @@ void IQDB::removeImage(imageId post_id) {
   m_info.at(image->id).avgl.v[0] = 0;
   sqlite_db_->removeImage(post_id);
 
-  INFO("Removed post #{} from memory and database.\n", post_id);
+  INFO("Removed post #{} from memory and database.", post_id);
 }
 
 size_t IQDB::getImgCount() {

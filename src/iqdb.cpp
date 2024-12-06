@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
     if (!strncmp(argv[1], "-d=", 3)) {
       debug_level = std::stoi(argv[1] + 3);
-      INFO("Debug level set to {}\n", debug_level);
+      INFO("Debug level set to {}", debug_level);
       argv++;
       argc--;
     }
@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
       help();
     }
   } catch (const iqdb::base_error &err) {
-    INFO("Error: {}.\n", err.what());
+    INFO("Error: {}.", err.what());
     if (errno)
       perror("Last system error");
   }

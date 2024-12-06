@@ -13,7 +13,7 @@ template<typename... Args>
 inline void LOG(std::string prefix, std::format_string<Args...> format, int level, Args... args) {
   if (level >= debug_level) {
     std::cerr << prefix;
-    std::print(std::cerr, format, std::forward<Args>(args)...);
+    std::println(std::cerr, format, std::forward<Args>(args)...);
   }
 }
 
