@@ -30,7 +30,7 @@ include(FetchContent)
 FetchContent_Declare(
   httplib
   GIT_REPOSITORY https://github.com/yhirose/cpp-httplib
-  GIT_TAG        v0.15.3
+  GIT_TAG        v0.18.3
 )
 
 FetchContent_Declare(
@@ -41,19 +41,19 @@ FetchContent_Declare(
 FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.6.0
+  GIT_TAG        v3.7.1
 )
 
 FetchContent_Declare(
   fmt
   GIT_REPOSITORY https://github.com/fmtlib/fmt
-  GIT_TAG        10.2.1
+  GIT_TAG        11.0.2
 )
 
 FetchContent_Declare(
   sqliteOrm
   GIT_REPOSITORY https://github.com/fnc12/sqlite_orm
-  GIT_TAG        v1.8.2
+  GIT_TAG        v1.9
 )
 
 FetchContent_MakeAvailable(httplib)
