@@ -1,5 +1,3 @@
-#include <dlfcn.h>
-
 #include <iqdb/debug.h>
 
 namespace iqdb {
