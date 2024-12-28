@@ -20,8 +20,8 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-#ifndef HAAR_H
-#define HAAR_H
+
+#pragma once
 
 /* STL Includes */
 #include <queue>
@@ -54,5 +54,3 @@ void transformChar(unsigned char *c1, unsigned char *c2, unsigned char *c3, Unit
 int calcHaar(Unit *cdata1, Unit *cdata2, Unit *cdata3, Idx *sig1, Idx *sig2, Idx *sig3, double *avgl);
 
 }
-
-#endif

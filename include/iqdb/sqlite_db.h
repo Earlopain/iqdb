@@ -1,5 +1,4 @@
-#ifndef IQDB_SQLITE_DB_H
-#define IQDB_SQLITE_DB_H
+#pragma once
 
 #include <cstdint>
 #include <functional>
@@ -75,5 +74,3 @@ private:
 };
 
 }
-
-#endif

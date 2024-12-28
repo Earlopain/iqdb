@@ -21,8 +21,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 \**************************************************************************/
 
-#ifndef IMGDBLIB_H
-#define IMGDBLIB_H
+#pragma once
 
 #include <iqdb/haar.h>
 #include <iqdb/sqlite_db.h>
@@ -86,5 +85,3 @@ private:
 };
 
 }
-
-#endif

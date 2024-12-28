@@ -1,5 +1,4 @@
-#ifndef IQDB_DEBUG_H
-#define IQDB_DEBUG_H
+#pragma once
 
 #include <iostream>
 #include <print>
@@ -38,5 +37,3 @@ inline void ERROR(std::format_string<Args...> format, Args... args) {
 }
 
 }
-
-#endif // IQDB_DEBUG_H

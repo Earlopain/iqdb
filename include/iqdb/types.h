@@ -1,5 +1,4 @@
-#ifndef IQDB_TYPES_H
-#define IQDB_TYPES_H_N
+#pragma once
 
 #include <cstdint>
 
@@ -14,5 +13,3 @@ using iqdbId = uint32_t; // An internal IQDB image ID.
 using Score = float;
 
 }
-
-#endif

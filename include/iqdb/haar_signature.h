@@ -1,5 +1,4 @@
-#ifndef HAAR_SIGNATURE_H
-#define HAAR_SIGNATURE_H
+#pragma once
 
 #include <string>
 #include <iqdb/haar.h>
@@ -24,5 +23,3 @@ struct HaarSignature {
 };
 
 }
-
-#endif
