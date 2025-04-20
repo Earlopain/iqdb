@@ -30,24 +30,24 @@ include(FetchContent)
 FetchContent_Declare(
   httplib
   GIT_REPOSITORY https://github.com/yhirose/cpp-httplib
-  GIT_TAG        v0.18.3
+  GIT_TAG        v0.20.0
 )
 
 FetchContent_Declare(
   json
-  URL            https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+  URL            https://github.com/nlohmann/json/releases/download/v3.12.0/json.tar.xz
 )
 
 FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.7.1
+  GIT_TAG        v3.8.1
 )
 
 FetchContent_Declare(
   sqliteOrm
   GIT_REPOSITORY https://github.com/fnc12/sqlite_orm
-  GIT_TAG        v1.9
+  GIT_TAG        v1.9.1
 )
 
 FetchContent_MakeAvailable(httplib)
